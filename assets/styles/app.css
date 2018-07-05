@@ -1,0 +1,4 @@
+html{position:relative; min-height:100%;}
+body{-webkit-font-smoothing:antialiased;}
+main#content{}
+.footer{width:100%; position:absolute; bottom:0; background-color:#F5F5F5;}

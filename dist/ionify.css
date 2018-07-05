@@ -1,0 +1,41 @@
+#ionify{width:360px; max-height:100%; box-shadow:0 0 96px rgba(0,0,0,0.08); position:fixed; top:24px; right:24px; z-index:1031; font-family:'Roboto',sans-serif;}
+#ionify .ionify{background:#FFF; font-size:14px; font-weight:300; color:#212121; box-shadow:0 1px 3px rgba(0,0,0,0.18); position:relative;}
+#ionify .ionify.progress{height:auto; display:block;}
+#ionify .ionify:not(:last-child){margin-bottom:1px;}
+#ionify .ionify .header{display:flex; align-items:center; font-size:12px; padding:14px 18px; border-radius:3px 3px 0 0;}
+#ionify .ionify .header .icon{width:18px; height:18px;border-radius:50%; margin-right:8px;}
+#ionify .ionify .header .icon:empty{background:#CFD8DC;}
+#ionify .ionify .header .icon i{font-size:18px;}
+#ionify .ionify .header .icon img{object-fit:cover; object-position:center;}
+#ionify .ionify .header .title{font-weight:bold;}
+#ionify .ionify .header .title:after{content:'·'; margin:0 4px;}
+#ionify .ionify .header .time{}
+#ionify .ionify .body{padding:8px 18px; display:flex; align-items:flex-start;}
+#ionify .ionify .body .avatar{width:48px; height:48px; border-radius:50%; margin-top:-8px;}
+#ionify .ionify .body .content{flex:1}
+#ionify .ionify .body img:first-child{margin-right:8px;}
+#ionify .ionify .body img:last-child{margin-left:8px;}
+#ionify .ionify .body .title{font-weight:bold; margin-bottom:8px;}
+#ionify .ionify .body .text{line-height:1.6;}
+#ionify .ionify .body .ionify_progress{width:100%; display:block;}
+#ionify .ionify .body .ionify_progress .details{display:flex;}
+#ionify .ionify .body .ionify_progress .details .title{flex:1;}
+#ionify .ionify .body .ionify_progress .details .time{}
+#ionify .ionify .body .ionify_progress progress{width:100%; height:4px; margin:6px 0; border-radius:3px;}
+#ionify .ionify .body .ionify_progress progress[value]::-webkit-progress-bar{background:#ECEFF1;}
+#ionify .ionify .body .ionify_progress progress[value]::-webkit-progress-value{background:#CFD8DC;}
+#ionify .ionify .footer{position:inherit;}
+#ionify .ionify .footer .prompt{display:flex; align-items:center; background:#FAFAFA;}
+#ionify .ionify .footer .prompt input{flex:1; background:transparent; border:none; height:50px; padding:0 18px; outline:none;}
+#ionify .ionify .footer .prompt input::-webkit-input-placeholder{color:#90A4AE;}
+#ionify .ionify .footer .prompt input::-moz-placeholder{color:#90A4AE;}
+#ionify .ionify .footer .prompt input:-ms-input-placeholder{color:#90A4AE;}
+#ionify .ionify .footer .prompt input:-moz-placeholder{color:#90A4AE;}
+#ionify .ionify .footer .prompt button{width:36px; height:36px; border-radius:50%; border:none; background:transparent; cursor:pointer; outline:none; margin-right:18px;}
+#ionify .ionify .footer .prompt button svg{width:18px; height:18px; fill:#90A4AE;}
+#ionify .ionify .footer .buttons:not(:empty){padding:18px 18px 18px 18px;}
+#ionify .ionify .footer .buttons a{text-decoration:none;}
+#ionify .ionify .footer .buttons a,
+#ionify .ionify .footer .buttons button{display:inline-block; color:#607D8B; font-weight:500; background:transparent; outline:none; border:none; padding:0; cursor:pointer;}
+#ionify .ionify .footer .buttons a:first-child,
+#ionify .ionify .footer .buttons button{margin-right:8px;}
