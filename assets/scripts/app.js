@@ -103,15 +103,15 @@ $(document).ready(function(){
 			footer	: {
 				buttons	: [
 					{
-						text		: 'Reply',
-						onType	: 'click',
+						text			: 'Reply',
+						onType		: 'click',
 						onCallback	: function(){
 							alert('click')
 						}
 					},
 					{
-						text		: 'Archive',
-						onType	: 'hover',
+						text			: 'Archive',
+						onType		: 'hover',
 						onCallback	: function(){
 							alert('hover')
 						}
