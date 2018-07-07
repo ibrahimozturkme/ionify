@@ -4,38 +4,85 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>Ionify</title>
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.css">
-	<link rel="stylesheet" href="dist/ionify.css">
+	<link rel="stylesheet" href="dist/styles/ionify.css">
 	<link rel="stylesheet" href="assets/styles/app.css">
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="dist/ionify.js"></script>
+	<script type="text/javascript" src="dist/scripts/ionify.js"></script>
 	<script type="text/javascript" src="assets/scripts/app.js"></script>
 	
 </head>
 <body>
 
 	<header>
-		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<nav id="menu" class="navbar navbar-expand-md fixed-top">
 			<div class="container">
-				<a class="navbar-brand" href="#">ionify <small class="badge badge-primary">1</small></a>
+				<a class="navbar-brand" href="#">$.ionify <small class="badge badge-pill badge-primary">1</small></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav mr-auto">
-						<li class="nav-item"><a class="nav-link" href="#">Installation</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Documentation</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Examples</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Download</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Browser Support</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">API & Callbacks</a></li>
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Installation</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Examples</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Browser Support</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">API & Callbacks</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
 					</ul>
 					<a href="https://ibrahimozturk.me/" title="İbrahim ÖZTÜRK | Freelance Full Stack Developer" class="navbar-brand">
 						<img src="https://secure.gravatar.com/avatar/efd3ffa5fedfce14ee1ab9709b37f237?s=64&d=mm&r=g" width="36" height="36" alt="İbrahim ÖZTÜRK | Freelance Full Stack Developer" class="rounded-circle">
@@ -47,18 +94,20 @@
 	</header>
 	
 	<main id="content">
-		
-		<section id="intro">
-			<div class="container">
-				<div class="row">
+
+		<section class="intro mb-5">
+			<div class="container h-100">
+				<div class="row h-100">
 					<div class="col-lg-12">
-						
-						<div class="jumbotron jumbotron-fluid mt-4 bg-light p-3">
-							<div class="container">
-								<div class="h2">ionify</div>
-								<p class="lead">Material Design Notifications.</p>
-								<a href="" class="btn btn-dark">Github</a>
-								<a href="" class="btn btn-primary">Download</a>
+
+						<div class="h-100 d-flex justify-content-center align-items-center">
+							<div class="jumbotron w-100">
+								<div class="container">
+									<h1>$.ionify <small class="badge badge-pill badge-primary">1</small></h1>
+									<h2>Material Design Notifications for Web</h2>
+									<a href="https://github.com/ibrahimozturkme/ionify" class="btn btn-dark">Github</a>
+									<a href="https://github.com/ibrahimozturkme/ionify/archive/master.zip" class="btn btn-primary">Download</a>
+								</div>
 							</div>
 						</div>
 						
@@ -72,7 +121,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="h5">Installation</div>
-						<p class="text-muted lead">
+						<p>
 							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto nihil distinctio voluptatum ullam eum eius aut, eos nisi laudantium explicabo beatae est mollitia quod ipsa, aspernatur officiis non quos excepturi.
 						</p>
 					</div>
@@ -85,7 +134,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="h5">Documentation</div>
-						<p class="text-muted lead">
+						<p>
 							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto nihil distinctio voluptatum ullam eum eius aut, eos nisi laudantium explicabo beatae est mollitia quod ipsa, aspernatur officiis non quos excepturi.
 						</p>
 					</div>
@@ -98,9 +147,123 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="h5">Examples</div>
-						<p class="text-muted lead">
+						<p>
 							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto nihil distinctio voluptatum ullam eum eius aut, eos nisi laudantium explicabo beatae est mollitia quod ipsa, aspernatur officiis non quos excepturi.
 						</p>
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									<label for="theme">Theme</label>
+									<select name="theme" id="theme" class="form-control">
+										<option value="default">Default</option>
+										<option value="red">Red</option>
+										<option value="pink">Pink</option>
+										<option value="purple">Purple</option>
+										<option value="deep_purple">Deep Purple</option>
+										<option value="indigo">Indigo</option>
+										<option value="blue">Blue</option>
+										<option value="light_blue">Light Blue</option>
+										<option value="cyan">Cyan</option>
+										<option value="teal">Teal</option>
+										<option value="green">Green</option>
+										<option value="light_green">Light Green</option>
+										<option value="lime">Lime</option>
+										<option value="yellow">Yellow</option>
+										<option value="amber">Amber</option>
+										<option value="orange">Orange</option>
+										<option value="deep_orange">Deep Orange</option>
+										<option value="brown">Brown</option>
+										<option value="grey">Grey</option>
+										<option value="blue_grey">Blue Grey</option>
+										<option value="black">Black</option>
+										<option value="white">White</option>
+									</select>
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group">
+									<label for="icon">Icon</label>
+									<select name="icon" id="icon" class="form-control">
+										<option value="material">Material Icons</option>
+										<option value="material">FontAwesome Icons</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<div class="card">
+									<div class="card-header">Header</div>
+									<div class="card-body">
+										<div class="form-group">
+											<label for="">Application Icon</label>
+											<div class="row">
+												<div class="col">
+													<div class="form-group">
+														<select name="" id="" class="custom-select">
+															<option value="class">Icon Class</option>
+															<option value="url">Image Icon URL</option>
+															<option value="material">Material Icon</option>
+														</select>
+													</div>
+												</div>
+												<div class="col">
+													<div class="form-group">
+														<input type="text" name="" id="" class="form-control" placeholder="Application Icon">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="">Application Name</label>
+											<input type="text" name="" id="" class="form-control" placeholder="Application Name">
+										</div>
+										<div class="form-group">
+											<label for="">Notification Time</label>
+											<input type="text" name="" id="" class="form-control" placeholder="Notification Time">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+									<div class="card-header">Body</div>
+									<div class="card-body">
+										<div class="form-group">
+											<label for="">Notification Title</label>
+											<input type="text" name="" id="" class="form-control" placeholder="Notification Title">
+										</div>
+										<div class="form-group">
+											<label for="">Notification Message</label>
+											<textarea name="" id="" class="form-control" placeholder="Notification Message"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+									<div class="card-header">Footer</div>
+									<div class="card-body">
+										<div class="form-group">
+											<label for=""></label>
+											<input type="text" name="" id="" class="form-control" placeholder="">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<div class="form-group mt-3">
+									<button class="btn btn-block btn-outline-primary">RUN</button>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<code class="bg-light d-block p-2">test</code>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -111,7 +274,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="h5">Download</div>
-						<p class="text-muted lead">
+						<p>
 							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto nihil distinctio voluptatum ullam eum eius aut, eos nisi laudantium explicabo beatae est mollitia quod ipsa, aspernatur officiis non quos excepturi.
 						</p>
 					</div>
@@ -124,7 +287,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="h5">API & Callbacks</div>
-						<p class="text-muted lead">
+						<p>
 							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto nihil distinctio voluptatum ullam eum eius aut, eos nisi laudantium explicabo beatae est mollitia quod ipsa, aspernatur officiis non quos excepturi.
 						</p>
 					</div>

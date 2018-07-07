@@ -4,143 +4,174 @@ $(document).ready(function(){
 		'paddingTop'	: $('header nav').outerHeight() + 'px',
 		'marginBottom'	: $('.footer').outerHeight() + 'px'
 	});
+
+	$.ionify	= new ionify({
+		group			: true,
+		theme			: 'blue_grey',
+		max_notification	: 5,
+		timeout			: 1000000,
+		sound			: 'dist/sounds/waterdrop.mp3',
+	});
 	
 	/* Examples */
-	$.ionify({
-		type			: 'prompt',
-		notification	: {
-			header	: {
-				icon		: {
-					url	: 'https://image.flaticon.com/icons/svg/252/252035.svg'
+	$.ionify.notification({
+		sound	: 'dist/sounds/waterdrop.mp3',
+		type		: 'prompt',
+		theme	: 'yellow',
+		header	: {
+			icon		: {
+				url	: 'https://image.flaticon.com/icons/svg/252/252035.svg'
+			},
+			title	: 'App Name',
+			time		: '8 min'
+		},
+		body		: {
+			title	: 'Notification Title',
+			text		: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+			icon	: {
+				material	: 'home'
+			}
+		},
+		footer	: {
+			buttons	: [
+				{
+					text			: 'Reply',
+					onType		: 'click',
+					onCallback	: function(){
+						$(this).parents('.ionify_footer').find('.ionify_buttons').addClass('hidden')
+						$(this).parents('.ionify_footer').find('.ionify_prompt').toggleClass('show')
+					}
 				},
-				title	: 'App Name',
-				time		: '8 min'
-			},
-			body		: {
-				title	: 'Notification Title',
-				text		: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-				avatar	: {
-					url		: 'https://secure.gravatar.com/avatar/efd3ffa5fedfce14ee1ab9709b37f237?s=64&d=mm&r=g',
-					direction	: 'left'
-				}
-			},
-			footer	: {
-				input		: {
-					placeholder	: 'Type Message',
-					button			: {
-						icon			: {
-							material	: 'send',
-						},
-						onType		: 'click',
-						onCallback	: function(){
-							alert('send')
-						}
+				{
+					text			: 'Archive',
+					onType		: 'mouseover',
+					onCallback	: function(){
+						alert('hover')
 					}
 				}
-			}
-		}
-	})
-
-	$.ionify({
-		type			: 'normal',
-		notification	: {
-			header	: {
-				icon		: {
-					material	: 'cloud'
+			],
+			input		: {
+				show			: false,
+				placeholder	: 'Type Message',
+				onType		: 'keyup',
+				onCallback	: function(e){
+					var keyCode	= e.wich || e.keyCode
+					if(keyCode == 13){
+						alert($(this).val())
+					}
 				},
-				title	: 'App Name',
-				time		: '8 min'
-			},
-			body		: {
-				title	: 'Notification Title',
-				text		: 'Lorem Ipsum is simply dummy text of the printing.'
-			},
-
-		}
-	})
-
-	$.ionify({
-		type			: 'progress',
-		notification	: {
-			header	: {
-				icon		: {
-					material	: 'cloud'
-				},
-				title	: 'App Name',
-				time		: '8 min'
-			},
-			body		: {
-				title	: 'Notification Title',
-				time		: '2 seconds left',
-				progress	: {
-					min	: 0,
-					max	: 100,
-					now	: 50
-				}
-			},
-
-		}
-	})
-
-	$.ionify({
-		type			: 'normal',
-		notification	: {
-			header	: {
-				icon		: {
-					url	: 'https://image.flaticon.com/icons/svg/252/252035.svg'
-				},
-				title	: 'App Name',
-				time		: '8 min'
-			},
-			body		: {
-				title	: 'Notification Title',
-				text		: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum a optio dolor quas corrupti illo incidunt.',
-				avatar	: {
-					url		: 'https://secure.gravatar.com/avatar/efd3ffa5fedfce14ee1ab9709b37f237?s=64&d=mm&r=g',
-					direction	: 'left'
-				}
-			},
-			footer	: {
-				buttons	: [
-					{
-						text			: 'Reply',
-						onType		: 'click',
-						onCallback	: function(){
-							alert('click')
-						}
+				button			: {
+					icon			: {
+						material	: 'send',
 					},
-					{
-						text			: 'Archive',
-						onType		: 'hover',
-						onCallback	: function(){
-							alert('hover')
-						}
+					onType		: 'click',
+					onCallback	: function(){
+						alert($(this).prev('input').val())
 					}
-				]
+				}
 			}
 		}
 	})
 
-	$.ionify({
+	$.ionify.notification({
 		type			: 'normal',
-		notification	: {
-			header	: {
-				icon		: {
-					material	: 'cloud'
-				},
-				title	: 'App Name',
-				time		: '8 min'
+		header	: {
+			icon		: {
+				material	: 'cloud'
 			},
-			body		: {
-				title	: 'Notification Title',
-				text		: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-				avatar	: {
-					url		: 'https://secure.gravatar.com/avatar/efd3ffa5fedfce14ee1ab9709b37f237?s=64&d=mm&r=g',
-					direction	: 'right'
-				}
-			},
-
+			title	: 'App Name',
+			time		: '8 min'
+		},
+		body		: {
+			title	: 'Notification Title',
+			text		: 'Lorem Ipsum is simply dummy text of the printing.'
 		}
 	})
 
+	$.ionify.notification({
+		type			: 'progress',
+		theme		: 'teal',
+		header		: {
+			icon		: {
+				material	: 'get_app'
+			},
+			title	: 'Download Manager',
+			time		: '68%'
+		},
+		body		: {
+			title	: 'App Name',
+			time		: '2 seconds left',
+			progress	: {
+				min	: 0,
+				max	: 100,
+				now	: 80
+			}
+		},
+		footer	: {
+			buttons	: [{
+				text			: 'Cancel',
+				onType		: 'click',
+				onCallback	: function(){
+					alert('Cancel')
+				}
+			}]
+		}
+	})
+
+	$.ionify.notification({
+		type			: 'normal',
+		header	: {
+			icon		: {
+				url	: 'https://image.flaticon.com/icons/svg/252/252035.svg'
+			},
+			title	: 'App Name',
+			time		: '8 min'
+		},
+		body		: {
+			title	: 'Notification Title',
+			text		: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum a optio dolor quas corrupti illo incidunt.',
+			icon	: {
+				url		: 'https://secure.gravatar.com/avatar/efd3ffa5fedfce14ee1ab9709b37f237?s=64&d=mm&r=g',
+				direction	: 'left'
+			}
+		},
+		footer	: {
+			buttons	: [
+				{
+					text			: 'Reply',
+					onType		: 'click',
+					onCallback	: function(){
+						alert('click')
+					}
+				},
+				{
+					text			: 'Archive',
+					onType		: 'mouseover',
+					onCallback	: function(){
+						alert('hover')
+					}
+				}
+			]
+		}
+	})
+
+	$.ionify.notification({
+		type			: 'normal',
+		header	: {
+			icon		: {
+				material	: 'cloud'
+			},
+			title	: 'App Name',
+			time		: '8 min'
+		},
+		body		: {
+			title	: 'Notification Title',
+			text		: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+			icon		: {
+				url		: 'https://secure.gravatar.com/avatar/efd3ffa5fedfce14ee1ab9709b37f237?s=64&d=mm&r=g',
+				direction	: 'right'
+			}
+		},
+
+	})
 })

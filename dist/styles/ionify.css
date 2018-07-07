@@ -1,0 +1,416 @@
+#ionify{width:360px; max-height:calc(100% - 48px); margin:24px 0; overflow:scroll; overflow-x:hidden; -webkit-box-shadow:0 0 96px rgba(0,0,0,0.08); box-shadow:0 0 96px rgba(0,0,0,0.08); position:fixed; top:0; right:24px; z-index:1031; font-family:'Roboto',sans-serif;}
+#ionify:empty{margin:0; -webkit-box-shadow:none; box-shadow:none;}
+#ionify::-webkit-scrollbar{width:0px; background:transparent;}
+#ionify .ionify{background:#FFF; border-radius:0; font-size:14px; font-weight:300; color:#212121; display:block; -webkit-box-shadow:0 1px 3px rgba(0,0,0,0.18); box-shadow:0 1px 3px rgba(0,0,0,0.18); position:relative; right:-100%; opacity:0; visibility:0; -webkit-transition:all 300ms; -o-transition:all 300ms; transition:all 300ms;}
+#ionify .ionify audio{display:none;}
+#ionify .ionify.show{height:auto; opacity:1; visibility:visible; right:0;}
+#ionify .ionify.hide{opacity:0; visibility:hidden; right:-100%;}
+#ionify .ionify:not(:last-child){margin-bottom:1px;}
+
+#ionify .ionify.collapse .ionify_body,
+#ionify .ionify.collapse .ionify_footer{height:0; padding:0; opacity:0; visibility:hidden; overflow:hidden}
+#ionify .ionify.collapse .ionify_body .ionify_content{-webkit-box-flex:1;-ms-flex:1;flex:1}
+
+#ionify .ionify .ionify_header{display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-align:center; -ms-flex-align:center; align-items:center; font-size:12px; padding:14px 18px; border-radius:3px 3px 0 0; cursor:pointer;}
+#ionify .ionify .ionify_header .ionify_icon{width:18px; height:18px;border-radius:50%; margin-right:8px;}
+#ionify .ionify .ionify_header .ionify_icon i{font-size:18px;}
+#ionify .ionify .ionify_header .ionify_icon img{-o-object-fit:cover;object-fit:cover; -o-object-position:center; object-position:center;}
+#ionify .ionify .ionify_header .ionify_title{font-weight:bold;}
+#ionify .ionify .ionify_header .ionify_title:after{content:'·'; margin:0 4px;}
+#ionify .ionify .ionify_header .ionify_time{}
+#ionify .ionify .ionify_header .ionify_time:after{content:'·'; margin:0 4px;}
+#ionify .ionify .ionify_header .ionify_close{width:24px; height:24px; padding:0; background:transparent; border-radius:50%; outline:none; border:none; cursor:pointer; position:absolute; top:8px; right:-36px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-align:center; -ms-flex-align:center; align-items:center; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; opacity:0; visibility:hidden; -webkit-transition:all 300ms; -o-transition:all 300ms; transition:all 300ms;}
+#ionify .ionify:hover > .ionify_header .ionify_close{opacity:1; visibility:visible; right:8px;}
+#ionify .ionify .ionify_header .ionify_close svg,
+#ionify .ionify .ionify_header .ionify_collapse_button svg{width:18px; height:18px;}
+
+#ionify .ionify .ionify_header .ionify_collapse_button{border:none; padding:0; width:18px; height:18px; border-radius:50%; background:transparent; cursor:pointer; outline:none}
+
+#ionify .ionify .ionify_body{padding:8px 18px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-align:start; -ms-flex-align:start; align-items:flex-start; -webkit-transition:all 300ms; -o-transition:all 300ms; transition:all 300ms;}
+#ionify .ionify .ionify_body .ionify_content{-webkit-box-flex:1;-ms-flex:1;flex:1}
+#ionify .ionify .ionify_body .ionify_icon{width:48px; height:48px; border-radius:50%; overflow:hidden; color:#FFF;}
+#ionify .ionify .ionify_body .ionify_icon:first-child{margin-right:8px;}
+#ionify .ionify .ionify_body .ionify_icon:last-child{margin-left:8px;}
+#ionify .ionify .ionify_body .ionify_icon i{width:100%; height:100%; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-align:center; -ms-flex-align:center; align-items:center; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; font-size:24px;}
+#ionify .ionify .ionify_body .ionify_icon img{max-width:100%; -o-object-fit:cover; object-fit:cover; -o-object-position:center; object-position:center;}
+#ionify .ionify .ionify_body .ionify_title{font-weight:bold; margin-bottom:8px;}
+#ionify .ionify .ionify_body .ionify_text{font-weight:300; font-size:14px; line-height:1.6;}
+#ionify .ionify .ionify_body .ionify_progress{width:100%; display:block;}
+#ionify .ionify .ionify_body .ionify_progress .ionify_details{display:-webkit-box;display:-ms-flexbox;display:flex;}
+#ionify .ionify .ionify_body .ionify_progress .ionify_details .ionify_title{-webkit-box-flex:1;-ms-flex:1;flex:1;}
+#ionify .ionify .ionify_body .ionify_progress .ionify_details .ionify_time{}
+#ionify .ionify .ionify_body .ionify_progress progress{width:100%; height:4px; margin:6px 0; border-radius:3px;}
+#ionify .ionify .ionify_footer{position:inherit; -webkit-transition:all 300ms; -o-transition:all 300ms; transition:all 300ms;}
+#ionify .ionify .ionify_footer .ionify_prompt{display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-align:center; -ms-flex-align:center; align-items:center; height:0; opacity:0; visibility:hidden; -webkit-transition:all 300ms; -o-transition:all 300ms; transition:all 300ms}
+#ionify .ionify .ionify_footer .ionify_prompt.show{height:auto; opacity:1; visibility:visible;}
+#ionify .ionify .ionify_footer .ionify_prompt input{-webkit-box-flex:1;-ms-flex:1;flex:1; background:transparent; border:none; height:50px; padding:0 18px; outline:none; color:#FFF;}
+#ionify .ionify .ionify_footer .ionify_prompt button{width:36px; height:36px; border-radius:50%; border:none; background:transparent; cursor:pointer; outline:none; margin-right:18px;}
+#ionify .ionify .ionify_footer .ionify_prompt button i{font-size:18px; line-height:1; vertical-align:middle;}
+#ionify .ionify .ionify_footer .ionify_buttons{height:auto; opacity:1; visibility:visible; -webkit-transition:all 300ms; -o-transition:all 300ms; transition:all 300ms;}
+#ionify .ionify .ionify_footer .ionify_buttons:not(:empty){padding:6px 18px 12px 18px;}
+#ionify .ionify .ionify_footer .ionify_buttons.hidden{height:0; opacity:0; visibility:hidden; padding:0;}
+#ionify .ionify .ionify_footer .ionify_buttons .ionify_button{text-decoration:none; display:inline-block; font-size:13px; font-weight:500; background:#ECEFF1; outline:none; border:none; padding:6px 10px; border-radius:25px; cursor:pointer; -webkit-transition:all 300ms; -o-transition:all 300ms; transition:all 300ms;}
+#ionify .ionify .ionify_footer .ionify_buttons .ionify_button:first-child{margin-right:8px;}
+#ionify .ionify .ionify_footer .ionify_buttons .ionify_button:hover{opacity:0.5;}
+
+/* Themes */
+
+/* Red */
+#ionify .ionify.red .ionify_header .ionify_icon:empty,
+#ionify .ionify.red .ionify_header .ionify_close:hover,
+#ionify .ionify.red .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.red .ionify_body .ionify_icon:empty,
+#ionify .ionify.red .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.red .ionify_footer .ionify_buttons .ionify_button{background:#FFEBEE;}
+#ionify .ionify.red .ionify_footer .ionify_prompt button i,
+#ionify .ionify.red .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#FFEBEE;}
+#ionify .ionify.red .ionify_body .ionify_icon,
+#ionify .ionify.red .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.red .ionify_footer .ionify_prompt{background:#F44336;}
+#ionify .ionify.red .ionify_header .ionify_icon i,
+#ionify .ionify.red .ionify_footer .ionify_buttons .ionify_button{color:#F44336;}
+#ionify .ionify.red .ionify_header .ionify_close svg,
+#ionify .ionify.red .ionify_header .ionify_collapse_button svg{fill:#F44336;}
+
+/* Pink */
+#ionify .ionify.pink .ionify_header .ionify_icon:empty,
+#ionify .ionify.pink .ionify_header .ionify_close:hover,
+#ionify .ionify.pink .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.pink .ionify_body .ionify_icon:empty,
+#ionify .ionify.pink .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.pink .ionify_footer .ionify_buttons .ionify_button{background:#FCE4EC;}
+#ionify .ionify.pink .ionify_footer .ionify_prompt button i,
+#ionify .ionify.pink .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#FCE4EC;}
+#ionify .ionify.pink .ionify_body .ionify_icon,
+#ionify .ionify.pink .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.pink .ionify_footer .ionify_prompt{background:#E91E63;}
+#ionify .ionify.pink .ionify_header .ionify_icon i,
+#ionify .ionify.pink .ionify_footer .ionify_buttons .ionify_button{color:#E91E63;}
+#ionify .ionify.pink .ionify_header .ionify_close svg,
+#ionify .ionify.pink .ionify_header .ionify_collapse_button svg{fill:#E91E63;}
+
+/* Purple */
+#ionify .ionify.purple .ionify_header .ionify_icon:empty,
+#ionify .ionify.purple .ionify_header .ionify_close:hover,
+#ionify .ionify.purple .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.purple .ionify_body .ionify_icon:empty,
+#ionify .ionify.purple .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.purple .ionify_footer .ionify_buttons .ionify_button{background:#F3E5F5;}
+#ionify .ionify.purple .ionify_footer .ionify_prompt button i,
+#ionify .ionify.purple .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#F3E5F5;}
+#ionify .ionify.purple .ionify_body .ionify_icon,
+#ionify .ionify.purple .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.purple .ionify_footer .ionify_prompt{background:#9C27B0;}
+#ionify .ionify.purple .ionify_header .ionify_icon i,
+#ionify .ionify.purple .ionify_footer .ionify_buttons .ionify_button{color:#9C27B0;}
+#ionify .ionify.purple .ionify_header .ionify_close svg,
+#ionify .ionify.purple .ionify_header .ionify_collapse_button svg{fill:#9C27B0;}
+
+/* Deep Purple */
+#ionify .ionify.deep_purple .ionify_header .ionify_icon:empty,
+#ionify .ionify.deep_purple .ionify_header .ionify_close:hover,
+#ionify .ionify.deep_purple .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.deep_purple .ionify_body .ionify_icon:empty,
+#ionify .ionify.deep_purple .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.deep_purple .ionify_footer .ionify_buttons .ionify_button{background:#EDE7F6;}
+#ionify .ionify.deep_purple .ionify_footer .ionify_prompt button i,
+#ionify .ionify.deep_purple .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#EDE7F6;}
+#ionify .ionify.deep_purple .ionify_body .ionify_icon,
+#ionify .ionify.deep_purple .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.deep_purple .ionify_footer .ionify_prompt{background:#673AB7;}
+#ionify .ionify.deep_purple .ionify_header .ionify_icon i,
+#ionify .ionify.deep_purple .ionify_footer .ionify_buttons .ionify_button{color:#673AB7;}
+#ionify .ionify.deep_purple .ionify_header .ionify_close svg,
+#ionify .ionify.deep_purple .ionify_header .ionify_collapse_button svg{fill:#673AB7;}
+
+/* Indigo */
+#ionify .ionify.indigo .ionify_header .ionify_icon:empty,
+#ionify .ionify.indigo .ionify_header .ionify_close:hover,
+#ionify .ionify.indigo .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.indigo .ionify_body .ionify_icon:empty,
+#ionify .ionify.indigo .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.indigo .ionify_footer .ionify_buttons .ionify_button{background:#E8EAF6;}
+#ionify .ionify.indigo .ionify_footer .ionify_prompt button i,
+#ionify .ionify.indigo .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#E8EAF6;}
+#ionify .ionify.indigo .ionify_body .ionify_icon,
+#ionify .ionify.indigo .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.indigo .ionify_footer .ionify_prompt{background:#3F51B5;}
+#ionify .ionify.indigo .ionify_header .ionify_icon i,
+#ionify .ionify.indigo .ionify_footer .ionify_buttons .ionify_button{color:#3F51B5;}
+#ionify .ionify.indigo .ionify_header .ionify_close svg,
+#ionify .ionify.indigo .ionify_header .ionify_collapse_button svg{fill:#3F51B5;}
+
+/* Blue */
+#ionify .ionify.blue .ionify_header .ionify_icon:empty,
+#ionify .ionify.blue .ionify_header .ionify_close:hover,
+#ionify .ionify.blue .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.blue .ionify_body .ionify_icon:empty,
+#ionify .ionify.blue .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.blue .ionify_footer .ionify_buttons .ionify_button{background:#E3F2FD;}
+#ionify .ionify.blue .ionify_footer .ionify_prompt button i,
+#ionify .ionify.blue .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#E3F2FD;}
+#ionify .ionify.blue .ionify_body .ionify_icon,
+#ionify .ionify.blue .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.blue .ionify_footer .ionify_prompt{background:#2196F3;}
+#ionify .ionify.blue .ionify_header .ionify_icon i,
+#ionify .ionify.blue .ionify_footer .ionify_buttons .ionify_button{color:#2196F3;}
+#ionify .ionify.blue .ionify_header .ionify_close svg,
+#ionify .ionify.blue .ionify_header .ionify_collapse_button svg{fill:#2196F3;}
+
+/* Light Blue */
+#ionify .ionify.light_blue .ionify_header .ionify_icon:empty,
+#ionify .ionify.light_blue .ionify_header .ionify_close:hover,
+#ionify .ionify.light_blue .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.light_blue .ionify_body .ionify_icon:empty,
+#ionify .ionify.light_blue .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.light_blue .ionify_footer .ionify_buttons .ionify_button{background:#E1F5FE;}
+#ionify .ionify.light_blue .ionify_footer .ionify_prompt button i,
+#ionify .ionify.light_blue .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#E1F5FE;}
+#ionify .ionify.light_blue .ionify_body .ionify_icon,
+#ionify .ionify.light_blue .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.light_blue .ionify_footer .ionify_prompt{background:#03A9F4;}
+#ionify .ionify.light_blue .ionify_header .ionify_icon i,
+#ionify .ionify.light_blue .ionify_footer .ionify_buttons .ionify_button{color:#03A9F4;}
+#ionify .ionify.light_blue .ionify_header .ionify_close svg,
+#ionify .ionify.light_blue .ionify_header .ionify_collapse_button svg{fill:#03A9F4;}
+
+/* Cyan */
+#ionify .ionify.cyan .ionify_header .ionify_icon:empty,
+#ionify .ionify.cyan .ionify_header .ionify_close:hover,
+#ionify .ionify.cyan .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.cyan .ionify_body .ionify_icon:empty,
+#ionify .ionify.cyan .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.cyan .ionify_footer .ionify_buttons .ionify_button{background:#E0F7FA;}
+#ionify .ionify.cyan .ionify_footer .ionify_prompt button i,
+#ionify .ionify.cyan .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#E0F7FA;}
+#ionify .ionify.cyan .ionify_body .ionify_icon,
+#ionify .ionify.cyan .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.cyan .ionify_footer .ionify_prompt{background:#00BCD4;}
+#ionify .ionify.cyan .ionify_header .ionify_icon i,
+#ionify .ionify.cyan .ionify_footer .ionify_buttons .ionify_button{color:#00BCD4;}
+#ionify .ionify.cyan .ionify_header .ionify_close svg,
+#ionify .ionify.cyan .ionify_header .ionify_collapse_button svg{fill:#00BCD4;}
+
+/* Teal */
+#ionify .ionify.teal .ionify_header .ionify_icon:empty,
+#ionify .ionify.teal .ionify_header .ionify_close:hover,
+#ionify .ionify.teal .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.teal .ionify_body .ionify_icon:empty,
+#ionify .ionify.teal .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.teal .ionify_footer .ionify_buttons .ionify_button{background:#E0F2F1;}
+#ionify .ionify.teal .ionify_footer .ionify_prompt button i,
+#ionify .ionify.teal .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#E0F2F1;}
+#ionify .ionify.teal .ionify_body .ionify_icon,
+#ionify .ionify.teal .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.teal .ionify_footer .ionify_prompt{background:#009688;}
+#ionify .ionify.teal .ionify_header .ionify_icon i,
+#ionify .ionify.teal .ionify_footer .ionify_buttons .ionify_button{color:#009688;}
+#ionify .ionify.teal .ionify_header .ionify_close svg,
+#ionify .ionify.teal .ionify_header .ionify_collapse_button svg{fill:#009688;}
+
+/* Green */
+#ionify .ionify.green .ionify_header .ionify_icon:empty,
+#ionify .ionify.green .ionify_header .ionify_close:hover,
+#ionify .ionify.green .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.green .ionify_body .ionify_icon:empty,
+#ionify .ionify.green .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.green .ionify_footer .ionify_buttons .ionify_button{background:#E8F5E9;}
+#ionify .ionify.green .ionify_footer .ionify_prompt button i,
+#ionify .ionify.green .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#E8F5E9;}
+#ionify .ionify.green .ionify_body .ionify_icon,
+#ionify .ionify.green .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.green .ionify_footer .ionify_prompt{background:#4CAF50;}
+#ionify .ionify.green .ionify_header .ionify_icon i,
+#ionify .ionify.green .ionify_footer .ionify_buttons .ionify_button{color:#4CAF50;}
+#ionify .ionify.green .ionify_header .ionify_close svg,
+#ionify .ionify.green .ionify_header .ionify_collapse_button svg{fill:#4CAF50;}
+
+/* Light Green */
+#ionify .ionify.light_green .ionify_header .ionify_icon:empty,
+#ionify .ionify.light_green .ionify_header .ionify_close:hover,
+#ionify .ionify.light_green .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.light_green .ionify_body .ionify_icon:empty,
+#ionify .ionify.light_green .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.light_green .ionify_footer .ionify_buttons .ionify_button{background:#F1F8E9;}
+#ionify .ionify.light_green .ionify_footer .ionify_prompt button i,
+#ionify .ionify.light_green .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#F1F8E9;}
+#ionify .ionify.light_green .ionify_body .ionify_icon,
+#ionify .ionify.light_green .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.light_green .ionify_footer .ionify_prompt{background:#8BC34A;}
+#ionify .ionify.light_green .ionify_header .ionify_icon i,
+#ionify .ionify.light_green .ionify_footer .ionify_buttons .ionify_button{color:#8BC34A;}
+#ionify .ionify.light_green .ionify_header .ionify_close svg,
+#ionify .ionify.light_green .ionify_header .ionify_collapse_button svg{fill:#8BC34A;}
+
+/* Lime */
+#ionify .ionify.lime .ionify_header .ionify_icon:empty,
+#ionify .ionify.lime .ionify_header .ionify_close:hover,
+#ionify .ionify.lime .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.lime .ionify_body .ionify_icon:empty,
+#ionify .ionify.lime .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.lime .ionify_footer .ionify_buttons .ionify_button{background:#F9FBE7;}
+#ionify .ionify.lime .ionify_footer .ionify_prompt button i,
+#ionify .ionify.lime .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#F9FBE7;}
+#ionify .ionify.lime .ionify_body .ionify_icon,
+#ionify .ionify.lime .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.lime .ionify_footer .ionify_prompt{background:#CDDC39;}
+#ionify .ionify.lime .ionify_header .ionify_icon i,
+#ionify .ionify.lime .ionify_footer .ionify_buttons .ionify_button{color:#CDDC39;}
+#ionify .ionify.lime .ionify_header .ionify_close svg,
+#ionify .ionify.lime .ionify_header .ionify_collapse_button svg{fill:#CDDC39;}
+
+/* Yellow */
+#ionify .ionify.yellow .ionify_header .ionify_icon:empty,
+#ionify .ionify.yellow .ionify_header .ionify_close:hover,
+#ionify .ionify.yellow .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.yellow .ionify_body .ionify_icon:empty,
+#ionify .ionify.yellow .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.yellow .ionify_footer .ionify_buttons .ionify_button{background:#FFF59D;}
+#ionify .ionify.yellow .ionify_footer .ionify_prompt button i,
+#ionify .ionify.yellow .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#FFF9C4;}
+#ionify .ionify.yellow .ionify_body .ionify_icon,
+#ionify .ionify.yellow .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.yellow .ionify_footer .ionify_prompt{background:#FBC02D;}
+#ionify .ionify.yellow .ionify_header .ionify_icon i,
+#ionify .ionify.yellow .ionify_footer .ionify_buttons .ionify_button{color:#FBC02D;}
+#ionify .ionify.yellow .ionify_header .ionify_close svg,
+#ionify .ionify.yellow .ionify_header .ionify_collapse_button svg{fill:#FBC02D;}
+
+/* Amber */
+#ionify .ionify.amber .ionify_header .ionify_icon:empty,
+#ionify .ionify.amber .ionify_header .ionify_close:hover,
+#ionify .ionify.amber .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.amber .ionify_body .ionify_icon:empty,
+#ionify .ionify.amber .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.amber .ionify_footer .ionify_buttons .ionify_button{background:#FFF8E1;}
+#ionify .ionify.amber .ionify_footer .ionify_prompt button i,
+#ionify .ionify.amber .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#FFF8E1;}
+#ionify .ionify.amber .ionify_body .ionify_icon,
+#ionify .ionify.amber .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.amber .ionify_footer .ionify_prompt{background:#FFC107;}
+#ionify .ionify.amber .ionify_header .ionify_icon i,
+#ionify .ionify.amber .ionify_footer .ionify_buttons .ionify_button{color:#FFC107;}
+#ionify .ionify.amber .ionify_header .ionify_close svg,
+#ionify .ionify.amber .ionify_header .ionify_collapse_button svg{fill:#FFC107;}
+
+/* Orange */
+#ionify .ionify.orange .ionify_header .ionify_icon:empty,
+#ionify .ionify.orange .ionify_header .ionify_close:hover,
+#ionify .ionify.orange .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.orange .ionify_body .ionify_icon:empty,
+#ionify .ionify.orange .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.orange .ionify_footer .ionify_buttons .ionify_button{background:#FFF8E1;}
+#ionify .ionify.orange .ionify_footer .ionify_prompt button i,
+#ionify .ionify.orange .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#FFF8E1;}
+#ionify .ionify.orange .ionify_body .ionify_icon,
+#ionify .ionify.orange .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.orange .ionify_footer .ionify_prompt{background:#FFC107;}
+#ionify .ionify.orange .ionify_header .ionify_icon i,
+#ionify .ionify.orange .ionify_footer .ionify_buttons .ionify_button{color:#FFC107;}
+#ionify .ionify.orange .ionify_header .ionify_close svg,
+#ionify .ionify.orange .ionify_header .ionify_collapse_button svg{fill:#FFC107;}
+
+/* Deep Orange */
+#ionify .ionify.deep_orange .ionify_header .ionify_icon:empty,
+#ionify .ionify.deep_orange .ionify_header .ionify_close:hover,
+#ionify .ionify.deep_orange .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.deep_orange .ionify_body .ionify_icon:empty,
+#ionify .ionify.deep_orange .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.deep_orange .ionify_footer .ionify_buttons .ionify_button{background:#FBE9E7;}
+#ionify .ionify.deep_orange .ionify_footer .ionify_prompt button i,
+#ionify .ionify.deep_orange .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#FBE9E7;}
+#ionify .ionify.deep_orange .ionify_body .ionify_icon,
+#ionify .ionify.deep_orange .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.deep_orange .ionify_footer .ionify_prompt{background:#FF5722;}
+#ionify .ionify.deep_orange .ionify_header .ionify_icon i,
+#ionify .ionify.deep_orange .ionify_footer .ionify_buttons .ionify_button{color:#FF5722;}
+#ionify .ionify.deep_orange .ionify_header .ionify_close svg,
+#ionify .ionify.deep_orange .ionify_header .ionify_collapse_button svg{fill:#FF5722;}
+
+/* Brown */
+#ionify .ionify.brown .ionify_header .ionify_icon:empty,
+#ionify .ionify.brown .ionify_header .ionify_close:hover,
+#ionify .ionify.brown .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.brown .ionify_body .ionify_icon:empty,
+#ionify .ionify.brown .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.brown .ionify_footer .ionify_buttons .ionify_button{background:#EFEBE9;}
+#ionify .ionify.brown .ionify_footer .ionify_prompt button i,
+#ionify .ionify.brown .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#EFEBE9;}
+#ionify .ionify.brown .ionify_body .ionify_icon,
+#ionify .ionify.brown .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.brown .ionify_footer .ionify_prompt{background:#795548;}
+#ionify .ionify.brown .ionify_header .ionify_icon i,
+#ionify .ionify.brown .ionify_footer .ionify_buttons .ionify_button{color:#795548;}
+#ionify .ionify.brown .ionify_header .ionify_close svg,
+#ionify .ionify.brown .ionify_header .ionify_collapse_button svg{fill:#795548;}
+
+/* Gray */
+#ionify .ionify.gray .ionify_header .ionify_icon:empty,
+#ionify .ionify.gray .ionify_header .ionify_close:hover,
+#ionify .ionify.gray .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.gray .ionify_body .ionify_icon:empty,
+#ionify .ionify.gray .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.gray .ionify_footer .ionify_buttons .ionify_button{background:#FAFAFA;}
+#ionify .ionify.gray .ionify_footer .ionify_prompt button i,
+#ionify .ionify.gray .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#FAFAFA;}
+#ionify .ionify.gray .ionify_body .ionify_icon,
+#ionify .ionify.gray .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.gray .ionify_footer .ionify_prompt{background:#9E9E9E;}
+#ionify .ionify.gray .ionify_header .ionify_icon i,
+#ionify .ionify.gray .ionify_footer .ionify_buttons .ionify_button{color:#9E9E9E;}
+#ionify .ionify.gray .ionify_header .ionify_close svg,
+#ionify .ionify.gray .ionify_header .ionify_collapse_button svg{fill:#9E9E9E;}
+
+/* Blue Grey */
+#ionify .ionify.blue_grey .ionify_header .ionify_icon:empty,
+#ionify .ionify.blue_grey .ionify_header .ionify_close:hover,
+#ionify .ionify.blue_grey .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.blue_grey .ionify_body .ionify_icon:empty,
+#ionify .ionify.blue_grey .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.blue_grey .ionify_footer .ionify_buttons .ionify_button{background:#FAFAFA;}
+#ionify .ionify.blue_grey .ionify_footer .ionify_prompt button i,
+#ionify .ionify.blue_grey .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#FAFAFA;}
+#ionify .ionify.blue_grey .ionify_body .ionify_icon,
+#ionify .ionify.blue_grey .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.blue_grey .ionify_footer .ionify_prompt{background:#607D8B;}
+#ionify .ionify.blue_grey .ionify_header .ionify_icon i,
+#ionify .ionify.blue_grey .ionify_footer .ionify_buttons .ionify_button{color:#607D8B;}
+#ionify .ionify.blue_grey .ionify_header .ionify_close svg,
+#ionify .ionify.blue_grey .ionify_header .ionify_collapse_button svg{fill:#607D8B;}
+
+/* Black */
+#ionify .ionify.black .ionify_header .ionify_icon:empty,
+#ionify .ionify.black .ionify_header .ionify_close:hover,
+#ionify .ionify.black .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.black .ionify_body .ionify_icon:empty,
+#ionify .ionify.black .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.black .ionify_footer .ionify_buttons .ionify_button{background:#ECEFF1;}
+#ionify .ionify.black .ionify_footer .ionify_prompt button i,
+#ionify .ionify.black .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#ECEFF1;}
+#ionify .ionify.black .ionify_body .ionify_icon,
+#ionify .ionify.black .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.black .ionify_footer .ionify_prompt{background:#000000;}
+#ionify .ionify.black .ionify_header .ionify_icon i,
+#ionify .ionify.black .ionify_footer .ionify_buttons .ionify_button{color:#000000;}
+#ionify .ionify.black .ionify_header .ionify_close svg,
+#ionify .ionify.black .ionify_header .ionify_collapse_button svg{fill:#000000;}
+
+/* White */
+#ionify .ionify.white{background:#000000;}
+#ionify .ionify.white .ionify_header .ionify_icon:empty,
+#ionify .ionify.white .ionify_header .ionify_close:hover,
+#ionify .ionify.white .ionify_header .ionify_collapse_button:hover,
+#ionify .ionify.white .ionify_body .ionify_icon:empty,
+#ionify .ionify.white .ionify_body .ionify_progress progress[value]::-webkit-progress-bar,
+#ionify .ionify.black .ionify_footer .ionify_buttons .ionify_button{background:#212121;}
+#ionify .ionify.white .ionify_body .ionify_icon,
+#ionify .ionify.white .ionify_footer .ionify_prompt button i,
+#ionify .ionify.white .ionify_footer .ionify_prompt input::-webkit-input-placeholder{color:#9E9E9E;}
+#ionify .ionify.white .ionify_body .ionify_icon,
+#ionify .ionify.white .ionify_body .ionify_progress progress[value]::-webkit-progress-value,
+#ionify .ionify.white .ionify_footer .ionify_prompt{background:#212121;}
+#ionify .ionify.white,
+#ionify .ionify.white .ionify_header .ionify_icon i,
+#ionify .ionify.white .ionify_footer .ionify_buttons .ionify_button{color:#FFFFFF;}
+#ionify .ionify.white .ionify_header .ionify_close svg,
+#ionify .ionify.white .ionify_header .ionify_collapse_button svg{fill:#FFFFFF;}
